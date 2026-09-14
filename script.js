@@ -1,3 +1,4 @@
+/* ALEN 5.0_4 — Current runtime */
 
 (function initSitePhone(){
   const phone = window.ALENINDAHOUSE_CONFIG?.phone;
@@ -238,6 +239,7 @@
     };
     backToTop.addEventListener("click", () => {
       window.scrollTo({top:0, behavior:"smooth"});
+      backToTop.blur();
     });
     window.addEventListener("scroll", syncBackToTop, {passive:true});
     syncBackToTop();
@@ -638,7 +640,7 @@ else initCookieConsent();
     content.hidden=!willOpen;
   });
 })();
-// ALEN 5.0_1 — centered mobile cases carousel controls.
+// ALEN 5.0_4 — mobile cases carousel: close non-current expanded cards at 425–760px.
 (function(){
   const root=document.querySelector('.case-grid');
   const ui=document.querySelector('.cases-carousel-ui');
@@ -649,11 +651,25 @@ else initCookieConsent();
   const dots=[...ui.querySelectorAll('[data-case-slide]')];
   if(cards.length!==4 || !count || !hint || dots.length!==4) return;
   let touched=false;
+  let lastIndex=0;
+  const isMobileCaseCarousel=()=>window.matchMedia('(min-width:425px) and (max-width:760px)').matches;
+  const closeOtherCases=(currentIndex)=>{
+    cards.forEach((card,i)=>{
+      if(i===currentIndex) return;
+      const button=card.querySelector('[data-case-toggle]');
+      const content=card.querySelector('.case-included');
+      if(!button || !content) return;
+      button.setAttribute('aria-expanded','false');
+      content.hidden=true;
+    });
+  };
   const update=()=>{
     const styles=getComputedStyle(root);
     const gap=parseFloat(styles.columnGap || styles.gap || '16') || 16;
     const step=cards[0].getBoundingClientRect().width+gap;
     const index=Math.max(0,Math.min(cards.length-1,Math.round(root.scrollLeft/step)));
+    if(index!==lastIndex && isMobileCaseCarousel()) closeOtherCases(index);
+    lastIndex=index;
     count.textContent=`${index+1} / ${cards.length}`;
     dots.forEach((dot,i)=>{
       const active=i===index;
