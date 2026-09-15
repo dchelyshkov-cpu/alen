@@ -1,6 +1,6 @@
 /* =========================================================
-   ALEN — 5.0_4 CURRENT WORKING RELEASE
-   Current 5.0_4 runtime stylesheet.
+   ALEN — 6.0 CURRENT CANDIDATE
+   Current 6.0 runtime stylesheet.
    Geometry is defined once per component and then adapted upward.
    ========================================================= */
 :root{
@@ -23,6 +23,7 @@
   --cta-height:48px;
   --cta-width:260px;
   --content-mobile:calc(100% - 28px);
+  --content-mobile-small:calc(100% - 24px);
   --screen-gap-mobile:40px;
   --screen-gap-tablet:52px;
   --screen-gap-desktop:60px;
@@ -64,6 +65,7 @@
   --light-surface-divider:rgba(32,32,32,.14);
   --light-card-bg:#D8DDD7;
   --dark-section-number:#b7b1a8;
+  --case-card-bg:#1b1a18;
 }
 
 *{box-sizing:border-box}
@@ -1004,18 +1006,20 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
 .generic-kicker.gold{color:var(--gold);}
 .generic-head{width:100%;margin:28px 0 0;}
 .generic-head p{color:#a9a39b;}
-.case-grid{margin-top:clamp(48px,6vw,78px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;align-items:start;}
-.case-card{border:var(--card-line-width) solid var(--line);background:#1d1d1d;border-radius:14px;overflow:hidden;}
+.case-grid{margin-top:clamp(48px,6vw,78px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:start;}
+.case-card{border:var(--card-line-width) solid var(--line);background:var(--case-card-bg);border-radius:14px;overflow:hidden;}
 .case-visual{aspect-ratio:4/3;overflow:hidden;background:#222;}
 .case-visual img{width:100%;height:100%;display:block;filter:saturate(.88);}
-.case-data{padding:22px;}.case-task{min-height:0;}.case-task p{margin:12px 0 0;font-family:var(--font-body);font-size:var(--t-item-body);font-weight:300;line-height:1.42;color:#a9a39b;letter-spacing:-.01em}.case-included-toggle{margin:24px 0 12px;padding:0;border:0;background:none;color:var(--gold);font:inherit;font-size:13px;font-weight:600;line-height:1.3;text-align:left;text-decoration:underline;text-underline-offset:3px;cursor:pointer}.case-included-toggle:hover{text-decoration-thickness:2px}.case-data>.case-included{display:block;margin:0 0 18px;padding:14px;border:1px solid var(--line);border-radius:10px;color:#bbb;font-size:13px;line-height:1.5}.case-data>.case-included[hidden]{display:none !important}.case-data>.case-included strong{display:block;margin-bottom:6px;color:#eee9e1;font-weight:600}.case-data>.case-included p{margin:0 0 8px;color:#c8c1b7;font-size:13px;line-height:1.45}.case-data>.case-included ul{margin:0;padding-left:18px}.case-data>.case-included li{margin:0 0 3px}.case-data>.case-included li:last-child{margin-bottom:0}.case-data>span{font-family:var(--font-body);font-size:var(--t-item-num);font-weight:600;line-height:1.2;color:var(--gold);letter-spacing:.05em}.case-data>strong{display:block;margin-top:10px;font-family:var(--font-main);font-size:var(--t-item-title);font-weight:500;line-height:1.15;letter-spacing:-.025em}.case-data>p{margin:12px 0 24px;font-family:var(--font-body);font-size:var(--t-item-body);font-weight:300;line-height:1.42;color:#a9a39b;letter-spacing:-.01em}.case-data>div{display:flex;justify-content:space-between;gap:20px}.case-data>div b{font-family:var(--font-body);font-size:var(--t-item-num);font-weight:600;line-height:1.2;color:#6f6b66;text-transform:uppercase;letter-spacing:.08em}.case-data>div span{font-family:var(--font-body);font-size:var(--t-item-body);font-weight:300;line-height:1.42;color:#eee9e1;letter-spacing:-.01em}
+.case-data{padding:22px;}.case-task p{margin:12px 0 0;font-family:var(--font-body);font-size:var(--t-item-body);font-weight:300;line-height:1.42;color:#a9a39b;letter-spacing:-.01em}.case-included-toggle{margin:24px 0 12px;padding:0;border:0;background:none;color:var(--gold);font:inherit;font-size:13px;font-weight:600;line-height:1.3;text-align:left;text-decoration:underline;text-underline-offset:3px;cursor:pointer}.case-included-toggle:hover{text-decoration-thickness:2px}.case-data>.case-included{display:block;margin:0 0 18px;padding:14px;border:1px solid var(--line);border-radius:10px;color:#bbb;font-size:13px;line-height:1.5}.case-data>.case-included[hidden]{display:none !important}.case-data>.case-included strong{display:block;margin-bottom:6px;color:#eee9e1;font-weight:600}.case-data>.case-included p{margin:0 0 8px;color:#c8c1b7;font-size:13px;line-height:1.45}.case-data>.case-included ul{margin:0;padding-left:18px}.case-data>.case-included li{margin:0 0 3px}.case-data>.case-included li:last-child{margin-bottom:0}.case-data>span{font-family:var(--font-body);font-size:var(--t-item-num);font-weight:600;line-height:1.2;color:var(--gold);letter-spacing:.05em}.case-data>strong{display:block;margin-top:10px;font-family:var(--font-main);font-size:var(--t-item-title);font-weight:500;line-height:1.15;letter-spacing:-.025em}.case-data>p{margin:12px 0 24px;font-family:var(--font-body);font-size:var(--t-item-body);font-weight:300;line-height:1.42;color:#a9a39b;letter-spacing:-.01em}.case-data>div{display:flex;justify-content:space-between;gap:20px}.case-data>div b{font-family:var(--font-body);font-size:var(--t-item-num);font-weight:600;line-height:1.2;color:#6f6b66;text-transform:uppercase;letter-spacing:.08em}.case-data>div span{font-family:var(--font-body);font-size:var(--t-item-body);font-weight:300;line-height:1.42;color:#eee9e1;letter-spacing:-.01em}
 .responsibility-layout{display:grid;grid-template-columns:180px minmax(0,1fr);column-gap:clamp(42px,5.5vw,88px);}
 .responsibility-layout>div:last-child,.contacts-main{grid-column:2;}.gold-text{color:var(--gold);}
 .responsibility-layout p,.contacts-main p{color:#a9a39b;}.responsibility-layout .cta{margin-top:30px;}
 .contacts-main h2{color:var(--text);}
 
-@media (min-width:761px){
-  .case-task{min-height:var(--case-task-min-height,0);}
+.case-task{min-height:var(--case-task-min-height,0);}
+@media (min-width:2000px){
+  .case-grid{grid-template-columns:repeat(6,minmax(0,1fr));}
+  .case-data>strong{min-height:46px;}
 }
 @media(max-width:1100px){
   .knowledge-shell,.generic-shell{width:min(1200px,calc(100% - 40px));}
@@ -1044,14 +1048,13 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
   letter-spacing:.075em;
 }
 .hero .approach strong{font-weight:600}
-.hero .approach-divider{display:none !important;}
-.hero .approach{column-gap:clamp(24px,3vw,56px);row-gap:8px;}
+.hero .approach-divider{margin:0 3px}
 .hero h1{
   font-family:var(--font-main);
   font-size:var(--hero-title-size);
   font-weight:800;
   line-height:.89;
-  letter-spacing:-.065em;
+  letter-spacing:-.025em;
   max-width:11.5ch;
 }
 .hero h1 span{font-size:1em;line-height:inherit}
@@ -1496,7 +1499,7 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
 /* Small mobile: same Hero mobile CTA sizing and body typography. */
 @media (max-width:420px){
   .approach-section-shell{
-    width:calc(100% - 24px);
+    width:var(--content-mobile-small);
     padding:14px 0;
   }
 
@@ -1781,35 +1784,28 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
   }
 
   .hero .approach{
-    display:flex;
-    flex-wrap:nowrap;
-    align-items:baseline;
-    justify-content:center;
+    display:block;
     width:100%;
     max-width:100%;
     margin-bottom:18px;
     font-size:14px;
     line-height:1.35;
     letter-spacing:.06em;
-    text-align:center;
   }
 
   .hero .approach strong{
-    display:inline-block;
-    flex:1 1 0;
-    width:auto;
-    max-width:none;
-    min-width:0;
-    text-align:center;
-    white-space:normal;
+    display:block;
+    width:100%;
+    max-width:100%;
   }
+
 
   .hero h1{
     width:100%;
     max-width:100%;
     font-size:14px;
     line-height:.89;
-    letter-spacing:-.065em;
+    letter-spacing:-.025em;
     overflow:visible;
   }
 
@@ -3135,7 +3131,8 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
 }
 
 @media(max-width:420px){
-  .generic-shell{width:calc(100% - 24px);}
+  .hero-shell{width:var(--content-mobile-small);}
+  .generic-shell{width:var(--content-mobile-small);}
 }
 
 @media (min-width:761px) and (max-width:1100px){
@@ -3147,7 +3144,7 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
   .cases-section .generic-head p{width:100%!important;max-width:none!important;}
 }
 @media (max-width:420px){
-  .cases-section .generic-shell{width:calc(100% - 24px);}
+  .cases-section .generic-shell{width:var(--content-mobile-small);}
 }
 
 /* V5.2 — Screen 05 mobile CTA uses the same full-width geometry as the Hero phone CTA. */
@@ -3403,7 +3400,7 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
    CASE CARD BASELINE — Screen 05 approved component state.
    Keep these values as the reference for future cards of the same type.
    Visual state is intentionally unchanged in this step.
-   Desktop: 4 columns; <=1100px: 2 columns; <=760px: 1 column.
+   Desktop: 3 columns; >=2000px: 6 columns; <=1100px: 2 columns; <=760px: 1-column mobile carousel.
    Card radius: 14px; media ratio: 4 / 3; desktop gap: 22px; mobile gap: 16px.
    Data padding: 22px.
    Category: var(--gold); title: #1a1917; body: #68635d; values: #1a1917; labels: #77716a.
@@ -3841,54 +3838,65 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
   color:#fff !important;
 }
 
-/* V5.14 — Hero credibility divider.
-   Approved rule:
-   - all breakpoints except 768: two stacked lines, no visible divider;
-   - 768: both phrases remain on one centered line with one literal "|" separator.
-   Typography, font sizes, line-height, and existing vertical spacing are preserved. */
+/* Hero credibility text — two distinct semantic blocks.
+   No visual divider character/line is used.
+   Desktop: side-by-side with a unified horizontal gap.
+   Tablet 761–900px: stacked, centered, with the same semantic separation vertically.
+   Mobile: stacked, preserving the existing left alignment and using the same separation. */
 .hero .approach{
-  display:block;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:5px;
 }
 .hero .approach strong{
-  display:block;
-  width:100%;
-  max-width:100%;
+  display:inline;
+  width:auto;
+  max-width:none;
 }
 .hero .approach-divider{
-  display:none;
+  display:none !important;
 }
-
-/* 768-range Hero composition: centered adjacent phrases, no divider. */
 @media (min-width:761px) and (max-width:900px){
   .hero .approach{
-    display:flex !important;
-    flex-wrap:nowrap !important;
-    align-items:baseline !important;
-    justify-content:center !important;
-    width:100% !important;
-    text-align:center !important;
-    white-space:normal !important;
-    column-gap:24px !important;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    text-align:center;
+    gap:5px;
   }
   .hero .approach strong{
-    display:inline-block !important;
-    flex:1 1 0 !important;
-    width:auto !important;
-    max-width:none !important;
-    min-width:0 !important;
-    white-space:normal !important;
-    text-align:center !important;
+    display:block;
+    width:100%;
+    max-width:100%;
   }
-  .hero .approach-divider{
-    display:none !important;
+}
+@media (max-width:760px){
+  .hero .approach{
+    flex-direction:column;
+    flex-wrap:nowrap;
+    align-items:flex-start;
+    width:100%;
+    text-align:left;
+    gap:5px;
   }
-  .hero .approach-divider::before,
-  .hero .approach-divider::after{
-    content:none !important;
-    display:none !important;
+  .hero .approach strong{
+    display:block;
+    width:100%;
+    max-width:100%;
   }
 }
 
+
+/* ALEN 5.0_14 — Hero wide-screen proportion experiment.
+   Scope: >=1440px only. Wider text column, narrower gallery; typography unchanged. */
+@media (min-width:1440px){
+  .hero-shell{
+    grid-template-columns:minmax(0,1.20fr) minmax(0,.80fr);
+  }
+}
 
 /* V5.19 — card lines: component-level visual unification.
    Global physical thickness: 1px.
@@ -4268,7 +4276,7 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
 @media (min-width:1101px){
   .s04 .grid{grid-template-columns:1fr !important;gap:var(--s04-trust-gap) !important;}
   .s04 .calc,
-  .s04 .s04-trust-cards{width:100% !important;max-width:960px !important;margin-left:auto !important;margin-right:auto !important;}
+  .s04 .s04-trust-cards{width:100% !important;max-width:none !important;margin-left:0 !important;margin-right:0 !important;}
 }
 @media (min-width:761px) and (max-width:1100px){
   .s04 .grid{grid-template-columns:1fr !important;gap:var(--s04-trust-gap) !important;}

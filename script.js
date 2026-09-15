@@ -1,4 +1,4 @@
-/* ALEN 5.0_4 — Current runtime */
+/* ALEN 6.0 — Current candidate runtime */
 
 (function initSitePhone(){
   const phone = window.ALENINDAHOUSE_CONFIG?.phone;
@@ -620,7 +620,6 @@ else initCookieConsent();
   if(!root) return;
   const syncTaskHeights=()=>{
     root.style.removeProperty('--case-task-min-height');
-    if(window.matchMedia('(max-width:760px)').matches) return;
     const tasks=[...root.querySelectorAll('.case-task')];
     if(!tasks.length) return;
     const maxHeight=Math.max(...tasks.map(task=>task.getBoundingClientRect().height));
@@ -638,9 +637,11 @@ else initCookieConsent();
     const willOpen=button.getAttribute('aria-expanded')!=='true';
     button.setAttribute('aria-expanded',String(willOpen));
     content.hidden=!willOpen;
+    const card=button.closest('.case-card');
+    if(card) card.classList.toggle('is-expanded',willOpen);
   });
 })();
-// ALEN 5.0_4 — mobile cases carousel: close non-current expanded cards at 425–760px.
+// ALEN 5.0_14 — mobile cases carousel + expanded-card height normalization.
 (function(){
   const root=document.querySelector('.case-grid');
   const ui=document.querySelector('.cases-carousel-ui');
@@ -649,38 +650,58 @@ else initCookieConsent();
   const count=document.getElementById('casesCarouselCount');
   const hint=document.getElementById('casesSwipeHint');
   const dots=[...ui.querySelectorAll('[data-case-slide]')];
-  if(cards.length!==4 || !count || !hint || dots.length!==4) return;
-  let touched=false;
+  if(!cards.length || !count || !hint || dots.length!==cards.length) return;
   let lastIndex=0;
-  const isMobileCaseCarousel=()=>window.matchMedia('(min-width:425px) and (max-width:760px)').matches;
+  const isMobileCaseCarousel=()=>window.matchMedia('(max-width:760px)').matches;
+
   const closeOtherCases=(currentIndex)=>{
     cards.forEach((card,i)=>{
       if(i===currentIndex) return;
       const button=card.querySelector('[data-case-toggle]');
       const content=card.querySelector('.case-included');
+      card.classList.remove('is-expanded');
       if(!button || !content) return;
       button.setAttribute('aria-expanded','false');
       content.hidden=true;
     });
   };
+
+
   const update=()=>{
     const styles=getComputedStyle(root);
     const gap=parseFloat(styles.columnGap || styles.gap || '16') || 16;
-    const step=cards[0].getBoundingClientRect().width+gap;
+    const firstWidth=cards[0].getBoundingClientRect().width;
+    const step=firstWidth+gap;
     const index=Math.max(0,Math.min(cards.length-1,Math.round(root.scrollLeft/step)));
     if(index!==lastIndex && isMobileCaseCarousel()) closeOtherCases(index);
     lastIndex=index;
     count.textContent=`${index+1} / ${cards.length}`;
+    if(index===0){
+      hint.textContent='Свайпните влево, чтобы посмотреть следующие проекты';
+    }else if(index===cards.length-1){
+      hint.textContent='Свайпните вправо, чтобы вернуться к предыдущим проектам';
+    }else{
+      hint.textContent='Свайпните влево или вправо, чтобы переключать проекты';
+    }
+    hint.hidden=false;
     dots.forEach((dot,i)=>{
       const active=i===index;
       dot.classList.toggle('is-active',active);
       dot.setAttribute('aria-selected',String(active));
     });
   };
+
   root.addEventListener('scroll',()=>{
-    if(!touched){touched=true;hint.hidden=true;}
     requestAnimationFrame(update);
   },{passive:true});
+
+  root.addEventListener('click',event=>{
+    const button=event.target.closest('[data-case-toggle]');
+    if(!button) return;
+    const card=button.closest('.case-card');
+    if(!card) return;
+  });
+
   dots.forEach(dot=>{
     dot.addEventListener('click',()=>{
       const i=Number(dot.dataset.caseSlide);
@@ -689,6 +710,9 @@ else initCookieConsent();
       card.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
     });
   });
+
   update();
-  window.addEventListener('resize',update,{passive:true});
+  window.addEventListener('resize',()=>{
+    requestAnimationFrame(update);
+  },{passive:true});
 })();

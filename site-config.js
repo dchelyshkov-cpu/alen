@@ -1,6 +1,6 @@
-/* ALEN — canonical content map — 5.0_8 current working base. */
+/* ALEN — canonical content map — 6.0 current candidate. */
 window.ALENINDAHOUSE_CONFIG = {
-  version: '5.0_8',
+  version: '6.0',
   phone: {display:"+7 (965) 329-10-40", href:"tel:+79653291040", mobileLabel:"Позвонить"},
   messengers: {telegram:"#", whatsapp:"#", max:"#"},
   forms: {submitEndpoint: "submit.php", maxFileBytes: 10 * 1024 * 1024},
