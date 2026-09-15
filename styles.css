@@ -54,6 +54,7 @@
   --section-header-line-height:1.18;
   --section-header-number-color:var(--muted);
   --section-description-color:#658C9E;
+  --emphasis-accent-color:#A7392A;
   --section-header-title-color:var(--section-description-color);
   --process-info-text-size:16px;
   --light-panel-bg:#eee9df;
@@ -65,8 +66,10 @@
   --light-surface-divider:rgba(32,32,32,.14);
   --light-card-bg:#D8DDD7;
   --dark-section-number:#b7b1a8;
-  --case-card-bg:#E1D2BE;
+  --case-card-bg:#E4D9CA;
 }
+
+.approach-system-accent{color:var(--emphasis-accent-color);}
 
 *{box-sizing:border-box}
 html{
@@ -321,6 +324,7 @@ h1{
 }
 h1 span{display:block}
 .accent-line{color:var(--section-description-color)}
+.emphasis-accent{color:var(--emphasis-accent-color)}
 body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-panel-ink);}
 .hero-description{
   max-width:42em;
@@ -1025,7 +1029,7 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
 .case-card{border:var(--card-line-width) solid var(--line);background:var(--case-card-bg);border-radius:14px;overflow:hidden;}
 .case-visual{aspect-ratio:4/3;overflow:hidden;background:#222;}
 .case-visual img{width:100%;height:100%;display:block;filter:saturate(.88);}
-.case-data{padding:22px;}.case-task p{margin:12px 0 0;font-family:var(--font-body);font-size:var(--t-item-body);font-weight:300;line-height:1.42;color:#a9a39b;letter-spacing:-.01em}.case-included-toggle{margin:24px 0 12px;padding:0;border:0;background:none;color:var(--gold);font:inherit;font-size:13px;font-weight:600;line-height:1.3;text-align:left;text-decoration:underline;text-underline-offset:3px;cursor:pointer}.case-included-toggle:hover{text-decoration-thickness:2px}.case-data>.case-included{display:block;margin:0 0 18px;padding:14px;border:1px solid var(--line);border-radius:10px;color:#bbb;font-size:13px;line-height:1.5}.case-data>.case-included[hidden]{display:none !important}.case-data>.case-included strong{display:block;margin-bottom:6px;color:#eee9e1;font-weight:600}.case-data>.case-included p{margin:0 0 8px;color:#c8c1b7;font-size:13px;line-height:1.45}.case-data>.case-included ul{margin:0;padding-left:18px}.case-data>.case-included li{margin:0 0 3px}.case-data>.case-included li:last-child{margin-bottom:0}.case-data>span{font-family:var(--font-body);font-size:var(--t-item-num);font-weight:600;line-height:1.2;color:var(--gold);letter-spacing:.05em}.case-data>strong{display:block;margin-top:10px;font-family:var(--font-main);font-size:var(--t-item-title);font-weight:500;line-height:1.15;letter-spacing:-.025em}.case-data>p{margin:12px 0 24px;font-family:var(--font-body);font-size:var(--t-item-body);font-weight:300;line-height:1.42;color:#a9a39b;letter-spacing:-.01em}.case-data>div{display:flex;justify-content:space-between;gap:20px}.case-data>div b{font-family:var(--font-body);font-size:var(--t-item-num);font-weight:600;line-height:1.2;color:#6f6b66;text-transform:uppercase;letter-spacing:.08em}.case-data>div span{font-family:var(--font-body);font-size:var(--t-item-body);font-weight:300;line-height:1.42;color:#eee9e1;letter-spacing:-.01em}
+.case-data{padding:22px;}.case-task p{margin:12px 0 0;font-family:var(--font-body);font-size:var(--t-item-body);font-weight:300;line-height:1.42;color:#a9a39b;letter-spacing:-.01em}.case-included-toggle{margin:24px 0 12px;padding:0;border:0;background:none;color:var(--gold);font:inherit;font-size:13px;font-weight:600;line-height:1.3;text-align:left;text-decoration:underline;text-underline-offset:3px;cursor:pointer}.case-included-toggle:hover{text-decoration-thickness:2px}.case-data>.case-included{display:block;margin:0 0 18px;padding:14px;border:1px solid var(--line);border-radius:10px;color:#68635d;font-size:13px;line-height:1.5}.case-data>.case-included[hidden]{display:none !important}.case-data>.case-included strong{display:block;margin-bottom:6px;color:#eee9e1;font-weight:600}.case-data>.case-included p{margin:0 0 8px;color:#68635d;font-size:13px;line-height:1.45}.case-data>.case-included ul{margin:0;padding-left:18px}.case-data>.case-included li{margin:0 0 3px}.case-data>.case-included li:last-child{margin-bottom:0}.case-data>span{font-family:var(--font-body);font-size:var(--t-item-num);font-weight:600;line-height:1.2;color:var(--gold);letter-spacing:.05em}.case-data>strong{display:block;margin-top:10px;font-family:var(--font-main);font-size:var(--t-item-title);font-weight:500;line-height:1.15;letter-spacing:-.025em}.case-data>p{margin:12px 0 24px;font-family:var(--font-body);font-size:var(--t-item-body);font-weight:300;line-height:1.42;color:#a9a39b;letter-spacing:-.01em}.case-data>div{display:flex;justify-content:space-between;gap:20px}.case-data>div b{font-family:var(--font-body);font-size:var(--t-item-num);font-weight:600;line-height:1.2;color:#6f6b66;text-transform:uppercase;letter-spacing:.08em}.case-data>div span{font-family:var(--font-body);font-size:var(--t-item-body);font-weight:300;line-height:1.42;color:#eee9e1;letter-spacing:-.01em}
 .responsibility-layout{display:grid;grid-template-columns:180px minmax(0,1fr);column-gap:clamp(42px,5.5vw,88px);}
 .responsibility-layout>div:last-child,.contacts-main{grid-column:2;}.gold-text{color:var(--gold);}
 .responsibility-layout p,.contacts-main p{color:#a9a39b;}.responsibility-layout .cta{margin-top:30px;}
@@ -2712,7 +2716,7 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
 }
 .cases-section .generic-head p{
   width:100%!important;
-  text-align:center!important;
+  text-align:center;
   max-width:none!important;
   margin-left:0!important;
   margin-right:0!important;
@@ -2979,7 +2983,7 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
   font-weight:500 !important;
   letter-spacing:-.045em !important;
   color:var(--light-panel-ink) !important;
-  text-align:center !important;
+  text-align:center;
   white-space:nowrap !important;
   overflow-wrap:normal !important;
   word-break:normal !important;
@@ -2999,7 +3003,7 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
   font-weight:300 !important;
   letter-spacing:-.01em !important;
   color:var(--light-panel-muted) !important;
-  text-align:center !important;
+  text-align:center;
 }
 
 /* Full-width vertical composition; calculator logic is untouched. */
@@ -3076,7 +3080,7 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
   .s04 .trust{margin-bottom:20px !important;}
 }
 
-/* The global h1 span rule is intentionally scoped out for the S04 title. */
+/* Keep the S04 title accent inline. */
 .s04 #calculation-title span{display:inline !important;}
 
 /* Preserve the agreed removal of the final Knowledge divider only. */
@@ -3368,7 +3372,7 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
   letter-spacing:-.055em !important;
   overflow-wrap:normal;
   word-break:normal;
-  text-align:center !important;
+  text-align:center;
 }
 .responsibility-layout p{
   width:100% !important;
@@ -3380,7 +3384,7 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
   line-height:1.45 !important;
   font-weight:300 !important;
   letter-spacing:-.01em !important;
-  text-align:center !important;
+  text-align:center;
 }
 .responsibility-contact-cta{
   display:flex;
@@ -3474,7 +3478,7 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
   line-height:1 !important;
   font-weight:400 !important;
   letter-spacing:-.055em !important;
-  text-align:center !important;
+  text-align:center;
 }
 .audit-content p{
   width:100% !important;
@@ -3486,7 +3490,7 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
   line-height:1.45 !important;
   font-weight:300 !important;
   letter-spacing:-.01em !important;
-  text-align:center !important;
+  text-align:center;
 }
 .audit-points{
   width:100%;
@@ -3668,7 +3672,7 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
   line-height:1.08 !important;
   font-weight:400 !important;
   letter-spacing:-.045em !important;
-  text-align:center !important;
+  text-align:center;
 }
 .contacts-shell .contacts-main > p{
   margin:var(--content-to-cta-gap) 0 0 !important;
@@ -3678,36 +3682,24 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
   font-size:var(--t-main-body) !important;
   line-height:1.45 !important;
   font-weight:300 !important;
-  text-align:center !important;
+  text-align:center;
 }
 @media(max-width:760px){
   .contacts-shell{width:var(--content-mobile);}
 }
 
-/* ============================================================
-   V5.3 — CANONICAL COPY ALIGNMENT + SCREEN 09 RHYTHM
-   Main/secondary section copy uses one centered alignment rule.
-   Screen 09 internal rhythm reuses existing global spacing tokens.
-   No new typography scale is introduced.
-   ============================================================ */
-.generic-head h2,
-.generic-head p,
-.quality-content h2,
-.quality-description,
-.responsibility-layout h2,
-.responsibility-layout p,
-.audit-content h2,
-.audit-content p,
-.contacts-main h2,
-.contacts-shell .contacts-main > p{
+/* 6.0 — SEMANTIC BLOCK COPY ALIGNMENT
+   One shared role for block-level titles and introductory copy.
+   Component/card text remains on its local rules.
+*/
+.block-title,
+.block-intro{
   text-align:center !important;
 }
 
 .contacts-main{
   margin-top:28px;
 }
-
-
 
 @media (max-width:760px){
   .contacts-main{margin-top:24px;}
@@ -3718,32 +3710,6 @@ body.visual-light-test .responsibility-layout h2 .accent-line{color:var(--light-
     margin-top:var(--content-to-cta-gap) !important;
   }
 }
-
-/* V5.4 — GLOBAL MAIN/SECONDARY COPY ALIGNMENT AUDIT 01–09
-   Approved scope: main and secondary section copy only.
-   Do not alter card copy, labels, CTA text, calculator controls or footer. */
-.approach-copy h2,
-.approach-copy p,
-.process-content h2,
-.knowledge-main-title,
-.knowledge-intro,
-.s04 #calculation-title,
-.s04 .intro,
-.cases-section .generic-head h2,
-.cases-section .generic-head p,
-.quality-content h2,
-.quality-description,
-.responsibility-layout h2,
-.responsibility-layout p,
-.audit-content h2,
-.audit-content p,
-.contacts-main h2,
-.contacts-shell .contacts-main > p{
-  text-align:center !important;
-}
-
-/* Keep the already approved width constraints and vertical rhythm intact. */
-
 
 /* ============================================================
    V5.7 — CANONICAL VERTICAL RHYTHM 01–09
@@ -4980,7 +4946,7 @@ body.visual-light-test .contacts-main h2{color:#1a1917;}
 body.visual-light-test .generic-head p,
 body.visual-light-test .responsibility-layout p,
 body.visual-light-test .contacts-main p{color:#68635d !important;}
-body.visual-light-test .case-card{background:#F3EEE6 !important;border-color:rgba(32,32,32,.14);}
+body.visual-light-test .case-card{border-color:rgba(32,32,32,.14);}
 body.visual-light-test .case-data>strong{color:#1a1917;}
 body.visual-light-test .case-data p{color:#68635d;}
 body.visual-light-test .case-data>div span{color:#1a1917;}
@@ -5205,18 +5171,20 @@ body.visual-light-test .responsibility-layout .person-card span{
 body.visual-light-test .approach-copy h2,
 body.visual-light-test .process-content h2,
 body.visual-light-test .knowledge-main-title,
-body.visual-light-test .s04 #calculation-title,
 body.visual-light-test .cases-section .generic-head h2,
 body.visual-light-test .quality-content h2,
 body.visual-light-test .responsibility-layout h2,
 body.visual-light-test .audit-content h2,
 body.visual-light-test .contacts-main h2,
-body.visual-light-test .s04 #calculation-title span,
 body.visual-light-test .quality-content h2 .gold-text,
 body.visual-light-test .responsibility-layout h2 .accent-line,
 body.visual-light-test .audit-content h2 .gold-text,
 body.visual-light-test .contacts-main h2 .accent-line{
   color:#202020 !important;
+}
+/* Shared accent role: survives the global light-copy color override. */
+body.visual-light-test .emphasis-accent{
+  color:var(--emphasis-accent-color) !important;
 }
 body.visual-light-test .approach-copy p,
 body.visual-light-test .knowledge-intro,
@@ -5316,6 +5284,17 @@ body.visual-light-test .info-card{
 .estimate-file-button:hover,.estimate-file-button:focus-visible{background:#9F763E;border-color:#9F763E;color:#FFFFFF;outline:none}
 .estimate-file-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#625C53;font-size:13px}
 .estimate-file-input{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+/* 6.0 — extended mobile copy alignment to 440px.
+   Only block-level main/secondary copy is aligned like the approved 425px state.
+   Typography, Hero, cards and internal component text remain unchanged.
+*/
+@media (min-width:426px) and (max-width:448px){
+  .block-title,
+  .block-intro{
+    text-align:left !important;
+  }
+}
 
 /* ============================================================
    V4.0 — COSMETIC 02 — MOBILE TYPOGRAPHY CONSOLIDATION
